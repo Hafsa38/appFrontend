@@ -1,0 +1,83 @@
+  
+    <!--<dx-chart id="chart"
+          [dataSource]="chartdata" title="Capacité Normale par barrage">
+    <dxi-series argumentField="name" valueField="normal_capacity"></dxi-series>
+    <dxo-argument-axis>
+        <dxo-label wordWrap="none" ></dxo-label>
+    </dxo-argument-axis>
+    <dxo-legend [visible]="false"></dxo-legend> 
+</dx-chart>-->
+<div id="chart">
+    <dx-chart
+        
+        [dataSource]="chartdata"
+        title="Capacité Normale par barrage">
+        <dxi-series valueField="normal_capacity"  color="#ff7f00" name="Capacité normale"></dxi-series>
+            
+        <dxo-common-series-settings #seriesSettings
+            argumentField="name"
+            >
+        </dxo-common-series-settings>
+        <dxo-margin [bottom]="20"></dxo-margin>  
+        <dxo-common-axis-settings>
+            <dxo-grid [visible]="true"></dxo-grid>
+        </dxo-common-axis-settings>
+        <dxo-legend
+            verticalAlignment="top"
+            horizontalAlignment="right">
+        </dxo-legend>
+    	<dxo-argument-axis [allowDecimals]="true" [axisDivisionFactor]="60">
+            <dxo-label>
+            	<dxo-format type="fixedPoint"
+                            [precision]="2"></dxo-format>
+
+        	</dxo-label>
+    	</dxo-argument-axis>
+        <dxo-export [enabled]="true"></dxo-export>
+        <dxo-tooltip [enabled]="true"
+        [format]="{
+            type: 'fixedPoint',
+            precision: '2'
+        }"
+        ></dxo-tooltip>
+    </dx-chart> <br>
+   
+</div>
+
+<div class="action">
+
+    <dx-select-box 
+        id="choose-date"
+        [items]="months"
+       
+        [width]="200"   
+        valueExpr="id" 
+        displayExpr="name"       
+        #month
+    ></dx-select-box>
+
+    <div class="label">Sélectionner un mois:
+    </div>
+</div> 
+
+<div class="action">
+
+    <dx-select-box 
+        id="choose-year"
+        [items]="years"
+    
+        [width]="200"   
+        valueExpr="name" 
+        displayExpr="name"
+        #year
+    ></dx-select-box>
+ 
+    <div class="label">Sélectionner une année :
+    </div>
+    
+</div> 
+<div  id="sub">
+    <button  type="submit" (click)="onSubmit(month.value,year.value)"
+        class="btn btn-primary">Submit</button>
+
+</div>
