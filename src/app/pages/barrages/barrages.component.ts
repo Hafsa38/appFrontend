@@ -16,7 +16,7 @@ export class BarragesComponent implements OnInit {
   } 
    
   getDataFromServer() {
-    this.http.get(' https://backend-barrages.herokuapp.com/route')
+    this.http.get(' https://barrages.herokuapp.com/route')
     .subscribe(res => {
       this.gridData = res;
     })
