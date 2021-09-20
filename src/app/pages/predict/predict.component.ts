@@ -23,7 +23,7 @@ export class PredictComponent implements OnInit {
   }
 
   submitClickHandler() {
-    this.httpclient.post('https://app-predication.herokuapp.com/predict', this.payload).subscribe((data: any) => {
+    this.httpclient.post('https://prediction-f-app.herokuapp.com//predict', this.payload).subscribe((data: any) => {
       this.message = data.message;
     }
   
