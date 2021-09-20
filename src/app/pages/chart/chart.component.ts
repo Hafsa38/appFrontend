@@ -101,7 +101,7 @@ export class ChartComponent implements OnInit {
     const params = new HttpParams()
     .set('year',this.y) 
     .set('month',this.m) 
-    this.http.get(' https://backend-barrages.herokuapp.com/query',{params})
+    this.http.get(' https://barrages.herokuapp.com/query',{params})
       .subscribe(res => {
        
         let data: any = res['rows'];
