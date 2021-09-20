@@ -99,7 +99,7 @@ export class Chart3Component implements OnInit {
     const params = new HttpParams()
     .set('year',this.y) 
     .set('month',this.m) 
-    this.http.get(' https://backend-barrages.herokuapp.com/select',{params}) 
+    this.http.get(' https://barrages.herokuapp.com/select',{params}) 
       .subscribe(res => {
       
         let data: any = res['rows'];
