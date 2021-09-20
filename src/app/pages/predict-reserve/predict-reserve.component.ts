@@ -23,7 +23,7 @@ export class PredictReserveComponent implements OnInit {
   }
 
   submitClickHandler() {
-    this.httpclient.post('https://prediction-r-app.herokuapp.com//predict', this.payload).subscribe((data: any) => {
+    this.httpclient.post('https://prediction-r-app.herokuapp.com/predict', this.payload).subscribe((data: any) => {
       this.message = data.message;
     }
   
